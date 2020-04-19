@@ -1,6 +1,10 @@
 import Vue from "vue";//es6语法
-import login from "./login.vue";//导入login组件 .vue后缀不能少
+import VueI18n from 'vue-i18n';
+import ZH from './common/lang/zh.js';
+import EN from './common/lang/en.js';
 import obj,{title2,title} from "./test.js";
+import login from "./login.vue";//导入login组件 .vue后缀不能少
+
 
 /*
     默认webpack无法打包.vue文件,需要安装相关的loader;
@@ -23,12 +27,20 @@ import obj,{title2,title} from "./test.js";
 
 console.log(obj);
 console.log(title+"---"+title2);
+Vue.use(VueI18n); // 通过插件的形式挂载
 
-var vm = new Vue({
+const i18n = new VueI18n({
+    locale: 'zh',    // 语言标识
+    //this.$i18n.locale // 通过切换locale的值来实现语言切换
+    messages: {
+        'zh': ZH,   // 中文语言包
+        'en': EN    // 英文语言包
+    }
+});
+
+new Vue({
     el:"#app",
-    data:{
-        msg:"info"
-    },
+    i18n:i18n,
     /*
         如果想通过vue,把一个组件放到页面中去展示,vm实例中的render函数可以实现
         render:function (c) {
@@ -36,6 +48,8 @@ var vm = new Vue({
         }
     */
     render:c=>c(login)
+    /* components: {login},
+     template:'<login></login>'*/
 });
 
 /*

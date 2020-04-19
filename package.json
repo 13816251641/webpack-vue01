@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --open --port 9000 --hot"
+    "dev": "webpack-dev-server --open --port 9001 --hot"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,8 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "jquery": "^3.4.1",
-    "vue": "^2.6.11"
+    "vue": "^2.5.17",
+    "vue-i18n": "^7.3.2"
   },
   "devDependencies": {
     "css-loader": "^0.25.0",

@@ -1,5 +1,5 @@
 <template>
-    <h3>login组件,使用.vue文件定义出来,{{msg}}</h3>
+    <h3 @click="show">login组件,使用.vue文件定义出来,{{msg}}--i18n:{{$t('nav.home')}}</h3>
 </template>
 
 <script>
@@ -15,6 +15,8 @@
         },
         methods:{
             show(){
+                console.log(this.$i18n);
+                console.log(this);
                 console.log("调用了login.vue中的show方法");
             }
         }

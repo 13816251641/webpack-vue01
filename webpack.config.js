@@ -31,8 +31,8 @@ var config={
         ]
     },
     resolve:{
-        alias:{ //修改vue被导入时候的包路径
-            /*"vue$":"vue/dist/vue.js"*/
+        alias:{
+            'vue$': 'vue/dist/vue.esm.js'//修改vue被导入时候的包路径
         }
     }
 }
